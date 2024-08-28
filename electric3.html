@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Promo Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* CSS to style the video background, navbar, and promo banner */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .promo-banner {
+            background-color: #d2b48c; /* Brownish color */
+            color: black;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .navbar-container {
+    /* background-color: rgba(0, 0, 0, 0.6); Semi-transparent black */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); /* Gradient from semi-transparent black to transparent */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 100%;
+    margin: 0 auto;
+    height: 90px;
+}
+
+.navbar-container:hover {
+    background-color: rgba(0, 0, 0, 1); /* Fully opaque black on hover */
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    color: white;
+}
+
+.navbar-logo{
+    display: flex;
+    flex-direction: row;
+}
+.navbar-logo img {
+    height: 40px;
+    margin-left:10px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-icons i {
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+/* Ensure the dropdown menu appears when hovering over the person icon */
+.dropdown-menu {
+    display: none; /* Hide by default */
+    position: absolute; /* Position relative to the dropdown container */
+    background-color: #343a40; /* Background color */
+    border: 1px solid rgba(0, 0, 0, 0.125); /* Border style */
+    border-radius: 0.375rem; /* Rounded corners */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Shadow */
+    right: 0; /* Align right edge with the parent */
+    top: 100%; /* Position below the parent element */
+    margin-top: 5px; /* Add space below the icon */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    min-width: 160px; /* Optional: set a minimum width for better appearance */
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show on hover */
+}
+
+/* Style dropdown items */
+.dropdown-menu .dropdown-item {
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Highlight dropdown item on hover */
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Highlight on hover */
+}
+
+/* Space between icon and text in dropdown items */
+.dropdown-menu i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+        .content {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .content .info-box {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-box div {
+            flex: 1;
+        }
+
+        .btn-outline-light {
+            margin: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        Apex drives the world forward - now starting from $69,900. <a href="#" style="color: black; text-decoration: underline;">View Offers</a>
+    </div>
+
+    <div class="navbar-container">
+        <div class="navbar-content">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <h3>Apex EV</h3>
+                <img src="car-logo.svg" alt="Logo">
+            </div>
+    
+            <!-- Navigation Links -->
+            <ul class="navbar-nav">
+                <li><a class="nav-link" href="#">Apex Air</a></li>
+                <li><a class="nav-link" href="#">Apex Gravity</a></li>
+                <li><a class="nav-link" href="#">Experience</a></li>
+                <li><a class="nav-link" href="#">Shop</a></li>
+            </ul>
+    
+            <!-- Icons -->
+            <div class="navbar-icons">
+                <i class="bi bi-question-circle"></i>
+                <i class="bi bi-globe"></i>
+                <div class="dropdown">
+                    <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> User Account</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="ev4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div>
+            <h1>Accelerating the EV Experience</h1>
+            <div class="info-box">
+                <div>
+                    <p><strong>Buy from</strong></p>
+                    <p>$69,900 <sup>1</sup></p>
+                    <p>Air Pure</p>
+                </div>
+                <div>
+                    <p><strong>Charging Allowance</strong></p>
+                    <p>$1,000</p>
+                    <p>on Apex charging accessories</p>
+                </div>
+                <div>
+                    <p><strong>Apex Care</strong></p>
+                    <p>2 yr or 24,000 mi<sup>2</sup></p>
+                    <p>free scheduled maintenance</p>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-outline-light">Test Drive</button>
+                <button class="btn btn-outline-light">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+   
+</body>
+
+</html>
